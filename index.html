@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<!--newstuff-->
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+<!--newstuff-->
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Twitter Sentiment Analysis of US 2016 Elections</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <span class="light">Home</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from background link when scrolled up past background section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#background">background</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#data">data</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Sentiment</h1>
+                        <p class="intro-text">A Data Visualization Project from the Master of Information and Data Science Program at UC Berkeley<br></p>
+                        <a href="#background" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- background Section -->
+    <section id="background" class="container content-section text-center">
+        <div class="col-lg-8 col-lg-offset-2">
+              <h2>background: Selecting a US president</h2>
+              <p>The US president is chosen in two main steps. A national convention is held by each party fielding a candidate at which delegates from different states choose the candidate that will represent them in the wider, general election. The delegates themselves choose the candidates either through caucus or primary elections (please see <a href="https://votesmart.org/education/government">Votesmart.org</a> for more details).</p>
+              <p>Several candidates compaign to be the party nominee for the general election prior to the national convention. After the national convention each party has only one candidate for the general election.</p>
+              <p>While there is no constitutional mandate restricting the number of parties, the US is mostly under a two party system, though third parties and independent candidates frequently emerge historically with limited impact. There is the Republican Party leaning on a right wing, conservative political platform. The Democratic Party leans on the more progressive left wing of the political spectrum.</p>
+              <h4>US Presidential Elections 2016</h4>
+              <p>As of end of April 2016 more than 80% of national delegates had already chosen through the caucases and primaries affiliation with a particular candidate.<a href="https://www.hillaryclinton.com/"> Hillary R. Clinton</a> and <a href="https://www.donaldjtrump.com/">Donald J. Trump</a> lead the tickets for the Democratic and Republican Parties respectively.</p>
+              <h4>Twitter Sentiment on Donald Trump vs. Hilary Clinton</h4>
+              <p>This project depicts the prevailing sentiment for the candidates as gleaned from nationwide tweets (on Twitter) about the two leading candidates. The analysis is concurrent and emphasizes a comparative snapshot rather than an aggregate of sentiment.</p>
+              <img src="http://cdn.static-economist.com/sites/default/files/imagecache/full-width/images/print-edition/20160305_LDD001_0.jpg">
+              <p font-size:9px>(image courtesy of The Economist in this <a href="http://www.economist.com/news/leaders/21693924-prospect-trump-v-clinton-grim-look-carefully-and-2016-offers-faint-promise">article </a>)</p>
+        </div>
+    </section>
+
+    <!-- data Section -->
+    <section id="data" class="container data-section text-center">
+            <div class="col-lg-8 col-lg-offset-2">
+                    <h2>YouTube Video</h2>
+                    <p>Trump's Speech in Buffalo</p>
+            </div>
+
+            <div style="margin: 0px auto; text-align: center;">
+                <iframe width="560" height="215" src="https://www.youtube.com/embed/F9tHQ7-u0bo" frameborder="0" allowfullscreen>
+     
+                </iframe>
+
+
+
+
+
+
+            </div>
+
+            </div>
+
+<!-- new stuff -->
+    <script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 20, left: 440},
+    width = 1260 - margin.left - margin.right,
+    height = 150 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data.txt", type, function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.State; }));
+  y.domain([0, d3.max(data, function(d) { return d.Tweets; })]);
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "12px") 
+        .style('fill', 'white')
+        .text("Trump Tweets");
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .style("font-size", "9px") 
+      .style('fill', 'white')
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .style('fill', 'white')
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .style('fill', 'white')
+      .text("Frequency");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.State); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.Tweets); })
+      .attr("height", function(d) { return height - y(d.Tweets); });
+});
+
+function type(d) {
+  d.Tweets = +d.Tweets;
+  return d;
+}
+
+</script>
+<!-- new stuff -->
+
+<!-- new stuff -->
+    <script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var svg1 = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data2.txt", type, function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.State; }));
+  y.domain([0, d3.max(data, function(d) { return d.Sentiment; })]);
+
+    svg1.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "12px") 
+        .style('fill', 'white')
+        .text("Trump Sentiment");
+
+  svg1.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .style("font-size", "9px") 
+      .style('fill', 'white')
+      .call(xAxis);
+
+  svg1.append("g")
+      .attr("class", "y axis")
+      .style('fill', 'white')
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .style('fill', 'white')
+      .text("Sent (0=Neg,1=Pos)");
+
+  svg1.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.State); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.Sentiment); })
+      .attr("height", function(d) { return height - y(d.Sentiment); });
+});
+
+function type(d) {
+  d.Sentiment = +d.Sentiment;
+  return d;
+}
+
+</script>
+<!-- new stuff -->
+
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Us</h2>
+                <p>This data vizualization project is the work Howard Wen, Dhaval Bhatt
+                  and Happiness Munedzimwe as a term project for the class DW209 Data Visualization
+                  offered by UC Berkeley under the <a href="https://datascience.berkeley.edu/">Master of Information and Data Science (MIDS)</a> program at UC Berkeley.
+                  Please contact us with any comments, concerns or requests.</p>
+                <p><a href="mailto:studentsupport@datascience.berkeley.edu">projects@MIDS</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>This website is adapted from the
+              <a href="http://blackrockdigital.github.io/startbootstrap-grayscale/">
+                startbootstrap-grayscale</a> open source template from Startbootstrap.com.
+              </p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>

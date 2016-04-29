@@ -1,0 +1,8 @@
+in [Powershell]
+
+cd desktop
+cd d3
+python –m http.server
+
+site:
+http://127.0.0.1:8000
